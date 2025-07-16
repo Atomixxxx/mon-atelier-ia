@@ -1,0 +1,84 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pyd
+*.so
+
+# Environnement virtuel
+.env/
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# Pytest
+.pytest_cache/
+
+# Coverage
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints
+
+# VSCode
+.vscode/
+
+# mypy, pylance, etc.
+.mypy_cache/
+.pyre/
+.pytype/
+
+# IDE / Editor
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+*.pid
+*.seed
+*.pid.lock
+
+# Configs sensibles
+.env
+.env.*
+!.env.example
+
+# Build
+dist/
+build/
+*.egg-info/
+.eggs/
+*.manifest
+*.spec
+
+# Backup
+*.bak
+*.tmp
+
+# Others
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Docs (optionnel si généré)
+docs/_build/

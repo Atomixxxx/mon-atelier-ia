@@ -1,4 +1,4 @@
-import { cn } from "@utils/helpers"; // Helper pour merger les classes tailwind (exemple ci-dessous)
+import { cn } from "@utils/helpers";
 import { forwardRef } from "react";
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -7,9 +7,13 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant = "primary", className, children, loading, disabled, ...props }, ref) => (
+  (
+    { variant = "primary", className, children, loading, disabled, type = "button", ...props },
+    ref
+  ): JSX.Element => (
     <button
       ref={ref}
+      type={type}
       className={cn(
         "inline-flex items-center justify-center gap-2 px-4 py-2 rounded font-medium transition focus:outline-none focus:ring-2 focus:ring-cyan-500",
         variant === "primary" && "bg-cyan-500 text-white hover:bg-cyan-600",
@@ -19,13 +23,19 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         (loading || disabled) && "opacity-60 pointer-events-none",
         className
       )}
+      aria-busy={loading || undefined}
       disabled={disabled || loading}
       {...props}
     >
       {loading && (
-        <svg className="animate-spin h-4 w-4 mr-2" viewBox="0 0 24 24">
+        <svg
+          className={cn("animate-spin h-4 w-4", children && "mr-2")}
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          focusable="false"
+        >
           <circle className="opacity-20" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-          <path className="opacity-70" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/>
+          <path className="opacity-70" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
         </svg>
       )}
       {children}

@@ -1,21 +1,22 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useId } from "react";
 
 interface TooltipProps {
   children: React.ReactNode;
   content: string;
-  side?: 'top' | 'bottom' | 'left' | 'right';
+  side?: "top" | "bottom" | "left" | "right";
 }
 
 export const Tooltip = ({
   children,
   content,
-  side = 'top',
+  side = "top",
 }: TooltipProps) => {
   const [isVisible, setIsVisible] = useState(false);
-  const timeout = useRef<NodeJS.Timeout | null>(null);
+  const timeout = useRef<number | null>(null);
+  const tooltipId = useId(); // React 18+
 
   const show = () => {
-    timeout.current = setTimeout(() => setIsVisible(true), 80);
+    timeout.current = window.setTimeout(() => setIsVisible(true), 80);
   };
   const hide = () => {
     if (timeout.current) clearTimeout(timeout.current);
@@ -38,15 +39,15 @@ export const Tooltip = ({
       onMouseLeave={hide}
       onFocus={show}
       onBlur={hide}
-      aria-describedby="tooltip"
+      aria-describedby={tooltipId}
     >
       {children}
       <div
-        className={`pointer-events-none absolute z-50 px-3 py-1.5 rounded bg-gray-900 text-xs text-white shadow opacity-0 transition-opacity duration-150 ${
-          isVisible ? "opacity-100" : ""
+        className={`absolute z-50 px-3 py-1.5 rounded bg-gray-900 text-xs text-white shadow transition-opacity duration-150 ${
+          isVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         } ${pos}`}
         role="tooltip"
-        id="tooltip"
+        id={tooltipId}
       >
         {content}
         <div

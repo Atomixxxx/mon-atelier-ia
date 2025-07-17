@@ -1,27 +1,25 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
-import path from 'path'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { resolve } from 'path';
 
 export default defineConfig({
-  plugins: [
-    react(),
-    tailwindcss()
-  ],
+  plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-      '@components': path.resolve(__dirname, './src/components'),
-      '@hooks': path.resolve(__dirname, './src/hooks'),
-      '@services': path.resolve(__dirname, './src/services'),
-      '@types': path.resolve(__dirname, './src/types'),
-      '@utils': path.resolve(__dirname, './src/utils')
-    }
+      '@': resolve(__dirname, 'src'),
+    },
   },
   server: {
     port: 5173,
     host: true,
-    open: true
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8000',
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
   },
   build: {
     outDir: 'dist',
@@ -31,17 +29,12 @@ export default defineConfig({
         manualChunks: {
           vendor: ['react', 'react-dom'],
           monaco: ['@monaco-editor/react'],
-          icons: ['lucide-react']
-        }
-      }
-    }
+          ui: ['lucide-react'],
+        },
+      },
+    },
   },
   optimizeDeps: {
-    include: [
-      'react',
-      'react-dom',
-      '@monaco-editor/react',
-      'lucide-react'
-    ]
-  }
-})
+    include: ['react', 'react-dom', '@monaco-editor/react'],
+  },
+});

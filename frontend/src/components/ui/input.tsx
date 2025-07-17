@@ -8,7 +8,10 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, iconLeft, iconRight, error, ...props }, ref) => {
+  ({ className, iconLeft, iconRight, error, id, ...props }, ref) => {
+    // Génère un id pour l’erreur si besoin
+    const errorId = id ? `${id}-error` : undefined;
+
     return (
       <div className="flex flex-col gap-1 w-full">
         <div
@@ -21,12 +24,19 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           {iconLeft && <span className="mr-2 text-zinc-400">{iconLeft}</span>}
           <input
             ref={ref}
+            id={id}
+            aria-invalid={!!error}
+            aria-describedby={error ? errorId : undefined}
             className="flex-1 bg-transparent outline-none text-sm text-white placeholder-zinc-400"
             {...props}
           />
           {iconRight && <span className="ml-2 text-zinc-400">{iconRight}</span>}
         </div>
-        {error && <span className="text-xs text-red-400 mt-1">{error}</span>}
+        {error && (
+          <span id={errorId} className="text-xs text-red-400 mt-1">
+            {error}
+          </span>
+        )}
       </div>
     );
   }

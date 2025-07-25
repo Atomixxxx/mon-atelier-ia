@@ -66,3 +66,8 @@ export const throttle = <T extends (...args: any[]) => any>(
     }
   };
 };
+
+// Utility for combining class names (similar to clsx)
+export const cn = (...classes: (string | undefined | null | false)[]): string => {
+  return classes.filter(Boolean).join(' ');
+};

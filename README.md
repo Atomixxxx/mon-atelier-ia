@@ -1,161 +1,239 @@
-# 🚀 Mon Atelier IA - Frontend Moderne
+# 🚀 Mon Atelier IA - Plateforme de Développement IA Révolutionnaire
 
-Une interface utilisateur moderne et élégante pour votre plateforme de développement assisté par IA.
+Une plateforme complète de développement assisté par Intelligence Artificielle avec interface premium et agents conversationnels.
 
-## ✨ Fonctionnalités
+## ✨ Fonctionnalités Principales
 
-- 🎨 **Interface moderne** - Design sombre élégant avec animations fluides
-- 💬 **Chat multi-agents** - Conversation en temps réel avec différents agents IA
-- 📝 **Éditeur Monaco** - Éditeur de code avancé avec coloration syntaxique
-- 🔄 **Workflows IA** - Exécution et suivi de workflows automatisés
-- 📁 **Gestion de projets** - Organisation et navigation dans vos projets
-- 🤝 **Collaboration** - Travail collaboratif avec les agents IA
-- 📱 **Responsive** - Interface adaptée à tous les écrans
+### 🎯 Chef d'Orchestre IA Conversationnel
+- **Conversation naturelle** - Dialogue intelligent pour comprendre vos besoins
+- **Questions contextuelles** - Pose des questions pertinentes pour affiner votre projet
+- **Mémoire de conversation** - Garde le contexte de tous les échanges
+- **Transition automatique** - Lance le développement quand il a assez d'informations
+
+### ⚛️ Agent Développeur IA Ultra-Avancé
+- **React/TypeScript expert** - Génère du code moderne et fonctionnel
+- **Architecture modulaire** - Code structuré et maintenable
+- **Preview automatique** - Visualisation instantanée des applications créées
+- **Streaming temps réel** - Suivi de la génération de code en direct
+
+### 🎨 Interface Premium Moderne
+- **Page d'accueil élégante** - Design minimaliste et professionnel
+- **Éditeur Monaco intégré** - Éditeur de code VS Code dans le navigateur
+- **Preview en temps réel** - Aperçu immédiat de vos applications
+- **Gestionnaire de fichiers** - Exploration et édition des fichiers générés
+- **Animations fluides** - Interface avec GPU acceleration
 
 ## 🛠️ Technologies
 
-- **React 19** - Framework UI moderne
-- **TypeScript** - Typage statique
-- **Vite** - Build tool rapide
-- **Tailwind CSS** - Framework CSS utilitaire
-- **Monaco Editor** - Éditeur de code VS Code
-- **Lucide React** - Icônes modernes
+### Frontend
+- **React 19** - Framework UI de dernière génération
+- **TypeScript** - Typage statique pour plus de robustesse
+- **Vite** - Build tool ultra-rapide
+- **Tailwind CSS** - Framework CSS utilitaire moderne
+- **Framer Motion** - Animations fluides et performantes
+- **Monaco Editor** - Éditeur de code professionnel
+- **Lucide React** - Icônes modernes et cohérentes
 
-## 🚀 Installation
+### Backend
+- **FastAPI** - Framework Python moderne et rapide
+- **OpenAI GPT-4o** - Modèle IA de pointe pour les agents
+- **WebSocket** - Communication temps réel
+- **Pydantic** - Validation de données robuste
+- **Uvicorn** - Serveur ASGI haute performance
+
+## 🚀 Installation et Démarrage
 
 ### Prérequis
-- Node.js 18+ 
-- npm ou yarn
-- Backend Mon Atelier IA démarré sur le port 8000
+- **Node.js 18+** et npm/yarn
+- **Python 3.9+** et pip
+- **Clé API OpenAI** (GPT-4o)
 
-### Étapes
+### 1. Configuration du Backend
 
-1. **Cloner et installer**
 ```bash
-cd Frontend
+cd backend
+
+# Installation des dépendances
+pip install -r requirements.txt
+
+# Configuration de la clé OpenAI
+# Modifier la clé dans backend/app/ultra_simple_main.py
+# ou définir OPENAI_API_KEY dans l'environnement
+
+# Démarrage du serveur
+python app/ultra_simple_main.py
+```
+
+Le backend sera disponible sur `http://localhost:8010`
+
+### 2. Configuration du Frontend
+
+```bash
+cd frontend
+
+# Installation des dépendances
 npm install
-```
 
-2. **Configuration**
-```bash
-# Copier le fichier d'environnement
-cp .env.example .env
-
-# Modifier les variables si nécessaire
-# VITE_API_URL=http://localhost:8000
-```
-
-3. **Démarrer en développement**
-```bash
+# Démarrage en développement
 npm run dev
 ```
 
-4. **Construire pour la production**
-```bash
-npm run build
+Le frontend sera disponible sur `http://localhost:5173`
+
+## 🎯 Guide d'Utilisation
+
+### Flux de Travail Complet
+
+1. **Page d'accueil** - Découvrez l'interface premium
+2. **Cliquez "Démarrer la révolution"** - Accédez au chat
+3. **Décrivez votre projet** - Le Chef d'Orchestre vous écoute
+4. **Répondez aux questions** - Il pose 2-3 questions contextuelles
+5. **Génération automatique** - L'Agent Développeur IA crée votre code
+6. **Preview instantanée** - Visualisez votre application
+7. **Édition et personnalisation** - Modifiez le code dans Monaco Editor
+
+### Exemples de Projects
+
+#### Application de Cuisine
+```
+"Je veux une application de cuisine qui génère des menus aléatoires"
 ```
 
-## 📂 Structure du Projet
-
+#### Jeu Pong
 ```
-src/
-├── components/          # Composants React
-│   ├── ui/             # Composants UI de base
-│   ├── layout/         # Mise en page
-│   ├── editor/         # Éditeur de code
-│   ├── chat/           # Interface chat
-│   ├── workflow/       # Gestion workflows
-│   └── agents/         # Agents IA
-├── hooks/              # Hooks personnalisés
-├── store/              # Gestion d'état
-├── utils/              # Utilitaires
-├── types/              # Types TypeScript
-└── styles/             # Styles globaux
+"Crée-moi un jeu Pong avec effets sonores et score"
 ```
 
-## 🎯 Utilisation
+#### Dashboard Moderne
+```
+"Une application dashboard avec graphiques et statistiques"
+```
 
-### Chat avec les Agents
-1. Sélectionnez un agent dans la sidebar
-2. Tapez votre message
-3. L'agent répond et peut exécuter des actions
+#### Site E-commerce
+```
+"Un site de vente en ligne avec panier et checkout"
+```
 
-### Workflows IA
-1. Accédez au Studio de Workflows
-2. Choisissez un type de workflow
-3. Décrivez votre demande
-4. Lancez l'exécution et suivez la progression
+## 📂 Architecture du Projet
 
-### Éditeur de Code
-1. Créez ou ouvrez un fichier
-2. Éditez avec la coloration syntaxique
-3. Utilisez les raccourcis (Ctrl+S pour sauver)
-4. Exécutez avec Ctrl+Enter
+```
+mon-atelier-ia/
+├── backend/                    # API et agents IA
+│   ├── app/
+│   │   ├── ultra_simple_main.py   # Serveur principal
+│   │   └── agents_modelfiles/     # Configuration des agents
+│   └── requirements.txt
+├── frontend/                   # Interface utilisateur
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── TeslaApp.tsx       # Application principale
+│   │   │   ├── TeslaInterface.tsx # Page d'accueil
+│   │   │   └── TeslaWorkflowInterface.tsx # Interface de chat
+│   │   ├── hooks/              # Hooks React personnalisés
+│   │   ├── utils/              # Utilitaires
+│   │   └── styles/             # Styles globaux
+│   └── package.json
+└── README.md
+```
 
-## ⚙️ Configuration
+## ⚙️ Configuration Avancée
 
-### Variables d'environnement
+### Variables d'Environnement Backend
 ```env
-VITE_API_URL=http://localhost:8000
-VITE_WS_URL=ws://localhost:8000/ws
-VITE_APP_NAME=Mon Atelier IA
+OPENAI_API_KEY=your-openai-api-key
+PORT=8010
 ```
 
-### Personnalisation du thème
-Modifiez `tailwind.config.js` pour personnaliser les couleurs et styles.
+### Configuration Frontend
+Le frontend est configuré pour se connecter automatiquement au backend sur le port correct.
 
-## 🔌 API Integration
+### Personnalisation des Agents
 
-Le frontend communique avec le backend via :
-- **REST API** - Endpoints standard
-- **WebSocket** - Temps réel pour les workflows
-- **Server-Sent Events** - Notifications push
+Les agents sont configurés dans `backend/app/ultra_simple_main.py` :
+- **project_orchestrator** - Chef d'Orchestre conversationnel
+- **quantum_developer** - Agent Développeur IA
+- **ultra_designer** - Designer CSS moderne
+- **code_architect** - Architecte de code
 
-## 📱 Responsive Design
+## 🎨 Fonctionnalités Avancées
 
-L'interface s'adapte automatiquement :
-- **Desktop** - Interface complète avec sidebar
-- **Tablet** - Sidebar collapsible
-- **Mobile** - Navigation mobile optimisée
+### Streaming en Temps Réel
+- Génération de code visible en direct
+- WebSocket pour communication instantanée
+- Debouncing optimisé pour fluidité
+
+### Preview Intelligente
+- Détection automatique du type de projet
+- Rendu HTML/CSS/JS instantané
+- Support responsive (Desktop/Mobile)
+- Gestion d'erreurs intégrée
+
+### Éditeur Monaco Professionnel
+- Coloration syntaxique avancée
+- IntelliSense et auto-complétion
+- Support multi-langages
+- Raccourcis clavier VS Code
+
+### Interface Premium
+- Design inspiré des meilleures interfaces modernes
+- Animations GPU-accelerated
+- Responsive design parfait
+- Thème sombre élégant
+
+## 🔧 Développement
+
+### Scripts Frontend
+```bash
+npm run dev          # Serveur de développement
+npm run build        # Build de production
+npm run preview      # Preview du build
+npm run lint         # ESLint
+npm run type-check   # Vérification TypeScript
+```
+
+### Scripts Backend
+```bash
+python app/ultra_simple_main.py  # Démarrage serveur
+```
+
+## 🚀 Déploiement
+
+### Production Locale
+```bash
+# Frontend
+cd frontend
+npm run build
+npm run preview
+
+# Backend  
+cd backend
+pip install -r requirements.txt
+python app/ultra_simple_main.py
+```
+
+### Docker (Optionnel)
+```bash
+# À venir - Configuration Docker pour déploiement simplifié
+```
+
+## 🔒 Sécurité
+
+- Validation des entrées côté client et serveur
+- Sanitisation du code généré
+- CORS configuré correctement
+- Gestion sécurisée des clés API
 
 ## 🧪 Tests
 
 ```bash
-# Tests unitaires
+# Frontend
+cd frontend
 npm run test
 
-# Tests E2E
-npm run test:e2e
-
-# Coverage
-npm run test:coverage
+# Backend - Tests à implémenter
+cd backend
+pytest
 ```
-
-## 📦 Déploiement
-
-### Production locale
-```bash
-npm run build
-npm run preview
-```
-
-### Docker
-```bash
-docker build -t mon-atelier-ia-frontend .
-docker run -p 3000:3000 mon-atelier-ia-frontend
-```
-
-### Vercel/Netlify
-1. Connectez votre repo GitHub
-2. Configurez les variables d'environnement
-3. Déployez automatiquement
-
-## 🛡️ Sécurité
-
-- Validation côté client des entrées
-- Sanitisation des contenus
-- CORS configuré
-- Headers de sécurité
 
 ## 🤝 Contribution
 
@@ -169,12 +247,26 @@ docker run -p 3000:3000 mon-atelier-ia-frontend
 
 Ce projet est sous licence MIT. Voir `LICENSE` pour plus de détails.
 
-## 💡 Support
+## 🆘 Support et FAQ
 
-- 📧 Email: support@mon-atelier-ia.com
-- 💬 Discord: [Lien vers Discord]
-- 📖 Documentation: [Lien vers docs]
+### Questions Fréquentes
+
+**Q: L'Agent IA ne génère pas de code**
+R: Vérifiez que votre clé OpenAI est configurée et que le backend est démarré
+
+**Q: La preview ne s'affiche pas**
+R: Assurez-vous que le code généré est valide et que les dépendances sont correctes
+
+**Q: Interface lente ou saccadée**
+R: L'interface utilise GPU acceleration - vérifiez les performances de votre navigateur
+
+### Contact
+- 🐛 **Issues**: [GitHub Issues]
+- 💬 **Discussions**: [GitHub Discussions]
+- 📧 **Email**: contact@mon-atelier-ia.com
 
 ---
 
-**Développé avec ❤️ pour la communauté des développeurs**
+**🎉 Développé avec passion pour révolutionner le développement web avec l'IA**
+
+*Une expérience de développement assisté par IA comme vous n'en avez jamais vue !*

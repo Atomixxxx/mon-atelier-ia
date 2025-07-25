@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import ModernAtelierIA from "./App"; // <-- Respecte la casse exacte du fichier
+import App from "./app"; // ✅ CORRECTION : Import du bon composant
 import "./styles/globals.css";
 
 const rootElement = document.getElementById("root");
@@ -10,6 +10,6 @@ if (!rootElement) {
 
 ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
-    <ModernAtelierIA />
+    <App />
   </React.StrictMode>
 );

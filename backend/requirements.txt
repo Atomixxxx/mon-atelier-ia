@@ -1,41 +1,43 @@
-# Core FastAPI dependencies
+# Core FastAPI dependencies - Production ready
 fastapi>=0.104.0
 uvicorn[standard]>=0.24.0
 pydantic>=2.5.0
-pydantic-settings>=2.1.0
+python-multipart>=0.0.6  # File uploads support
 
-# Database & ORM
-sqlalchemy>=2.0.23
-alembic>=1.13.0
-psycopg2-binary>=2.9.9  # PostgreSQL
-aiosqlite>=0.19.0       # SQLite async
-
-# AI/ML integrations
-openai>=1.3.0
-anthropic>=0.8.0
+# AI/ML integrations - Core functionality
+openai>=1.3.0            # OpenAI GPT-4o integration
 httpx>=0.25.0           # HTTP client for API calls
-requests>=2.31.0
 
-# File handling & utilities
-python-multipart>=0.0.6  # File uploads
-aiofiles>=23.2.1          # Async file operations
-python-jose[cryptography]>=3.3.0  # JWT tokens
-passlib[bcrypt]>=1.7.4    # Password hashing
-python-dotenv>=1.0.0      # Environment variables
+# WebSocket support for real-time streaming
+websockets>=12.0        # WebSocket server support
 
-# Development & monitoring
-pytest>=7.4.0
-pytest-asyncio>=0.21.0
-pytest-cov>=4.1.0
-black>=23.11.0            # Code formatting
-flake8>=6.1.0            # Linting
-mypy>=1.7.0              # Type checking
+# Utilities and configuration
+python-dotenv>=1.0.0    # Environment variables management
+pyyaml>=6.0.1          # YAML configuration files
 
-# Production
-gunicorn>=21.2.0         # Production WSGI server
-redis>=5.0.1             # Caching & session store
-celery>=5.3.4            # Background tasks
+# Development and testing
+pytest>=7.4.0          # Testing framework
+pytest-asyncio>=0.21.0 # Async testing support
 
-# Optional: Local LLM support
-# ollama>=0.1.0          # Uncomment for Ollama integration
-# llama-cpp-python>=0.2.0  # Uncomment for local LLaMA
+# Optional: Enhanced logging and monitoring
+rich>=13.7.0           # Better console output (optional)
+
+# Security (if needed for production)
+# python-jose[cryptography]>=3.3.0  # JWT tokens
+# passlib[bcrypt]>=1.7.4            # Password hashing
+
+# Database support (if needed later)
+# sqlalchemy>=2.0.23               # SQL ORM
+# aiosqlite>=0.19.0                # SQLite async
+# psycopg2-binary>=2.9.9           # PostgreSQL
+
+# Background tasks (if needed)
+# celery>=5.3.4                    # Background tasks
+# redis>=5.0.1                     # Task queue backend
+
+# Production server (alternative to uvicorn)
+# gunicorn>=21.2.0                 # Production WSGI server
+
+# Local LLM support (optional)
+# ollama>=0.1.0                    # Local Ollama integration
+# llama-cpp-python>=0.2.0          # Local LLaMA models
